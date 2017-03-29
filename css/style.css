@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans"), local("FiraSans-Regular"), url("../fonts/fira-sans/firasans-regular.woff2") format("woff2"), url("../fonts/fira-sans/firasans-regular.woff") format("woff"), url("../fonts/fira-sans/firasans-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Fira Sans";
+  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url("../fonts/fira-sans/firasans-bold.woff2") format("woff2"), url("../fonts/fira-sans/firasans-bold.woff") format("woff"), url("../fonts/fira-sans/firasans-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box; }
+
+html {
+  min-height: 100%;
+  font-size: 7px; }
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  font: 300 1.6rem/1.3 "Fira Sans", "Arial", sans-serif;
+  color: #444444;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+dd,
+dl,
+dt {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: #b5b9be; }
+  a:active, a:focus, a:hover {
+    text-decoration: underline; }
+
+.page-wrapper {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  overflow: hidden; }
+
+.back-top {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 1000; }
+  .back-top a {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background: url("../img/icons/top.svg") center no-repeat;
+    background-size: contain;
+    text-align: center;
+    text-decoration: none; }
+    .back-top a:hover {
+      background-image: url("../img/icons/top_hover.svg"); }
+
+.btn {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: #878787;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: normal 2.2rem "Fira Sans", "Arial", sans-serif;
+  color: #fff; }
+  .btn:hover, .btn:active {
+    text-decoration: none; }
+  @media (min-width: 767px) {
+
+  html {
+    font-size: 9px; } }
+  @media (min-width: 1230px) {
+
+  html {
+    font-size: 10px; } }

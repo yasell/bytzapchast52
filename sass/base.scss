@@ -1,0 +1,81 @@
+// base style
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%;
+	font-size: 7px;
+
+	@media (min-width: $tablet) {
+		font-size: 9px;
+	}
+	@media (min-width: $desktop) {
+		font-size: 10px;
+	}
+}
+
+body {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	font: 300 1.6rem/1.3 $font_1;
+	color: $color_body;
+	overflow-x: hidden;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+dd,
+dl,
+dt {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: $color_link;
+
+	&:active,
+	&:focus,
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.page-wrapper {
+	position: relative;
+	min-height: 100%;
+	height: auto !important;
+	overflow: hidden;
+}
+
+// back to top
+.back-top {
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+	z-index: 1000;
+
+	a {
+		display: block;
+		width: 5rem;
+		height: 5rem;
+		background: url("../img/icons/top.svg") center no-repeat;
+		background-size: contain;
+		text-align: center;
+		text-decoration: none;
+
+		&:hover {
+			background-image: url("../img/icons/top_hover.svg");
+		}
+	}
+}

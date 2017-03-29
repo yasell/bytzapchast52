@@ -1,0 +1,51 @@
+.header {
+	width: 100%;
+	background-color: $blue;
+	box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.2);
+}
+
+.header__inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+// navigation
+.header__nav-list {
+	display: flex;
+
+	@media (max-width: $tablet) {
+		display: none;
+	}
+}
+
+.header__nav-item a {
+	padding: 2rem;
+	font-size: 14px;
+	line-height: 20px;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 4px;
+	transition: all 0.3s;
+
+	&:active,
+	&:focus,
+	&:hover {
+		text-decoration: none;
+		background-color: $blue_dark;
+	}
+}
+
+// header phone
+.header__phone-list {
+	text-align: right;
+}
+
+.header__phone-item {
+	a {
+		font: bold 3rem $font_1;
+		color: #fff;
+		transition: all 0.3s;
+		@include niceText;
+	}
+}

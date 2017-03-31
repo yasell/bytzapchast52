@@ -16,6 +16,28 @@ $("#back-top").click(function() {
 	return false;
 });
 
+// - smooth scroll
+$(".header__nav-list").on("click", "a", function(event) {
+	event.preventDefault();
+
+	var el = $(this).attr("href");
+	$("body,html").animate({
+		scrollTop: $(el).offset().top
+	}, 2000);
+	return false;
+});
+
+// call button
+$("#call").click(function() {
+	$("#modal_call").addClass("modal_show");
+	$(".modal_bg").css("display", "block");
+});
+
+$(".modal__close, .modal_bg").click(function() {
+	$("#modal_call").removeClass("modal_show");
+	$(".modal_bg").css("display", "none");
+});
+
 // easy form validate
 function validateForm(dir) {
 	var form = dir;

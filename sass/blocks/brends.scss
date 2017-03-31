@@ -1,0 +1,44 @@
+.brends {
+	padding-bottom: 30px;
+	background-color: $gray_lightest;
+}
+
+.brends__list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.brends__item {
+	position: relative;
+	width: 14.4%;
+	height: 60px;
+	margin: 0 2.7% 15px 0;
+	overflow: hidden;
+	border-width: 1px;
+  border-color: rgb(235, 235, 235);
+  border-style: solid;
+  border-radius: 4px;
+  background-color: #fff;
+
+	&:nth-child(6n+6) {
+		margin-right: 0;
+	}
+
+	img {
+		@include centerImg;
+		max-width: 100%;
+	}
+
+	@media (max-width: $mobile_full) {
+		width: 25%;
+		margin-right: 12.5%;
+
+		&:nth-child(6n+6) {
+			margin-right: 0;
+		}
+		&:nth-child(3n+3) {
+			margin-right: 0;
+		}
+	}
+}

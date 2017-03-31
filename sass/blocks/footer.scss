@@ -1,0 +1,13 @@
+.footer {
+	background-color: #50555f;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.footer__copyright {
+	color: #c5c5c5;
+}

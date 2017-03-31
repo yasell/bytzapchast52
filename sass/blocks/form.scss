@@ -1,0 +1,162 @@
+// inputs and selects base ( @extend )
+%form_field {
+	display: block;
+	width: 100%;
+	height: 40px;
+	padding: 1rem;
+	padding-left: 20px;
+	font: normal 1.4rem/1.33 $font_1;
+	color: $color_body;
+	border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+	opacity: 1;
+	transition: all 0.3s ease;
+}
+
+// common form style
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+
+	@extend %form_field;
+
+	&::-webkit-input-placeholder { color: $gray; opacity: 1; transition: all 0.3s ease; }
+  &::-moz-placeholder 				 { color: $gray; opacity: 1; transition: all 0.3s ease; }
+  &:-ms-input-placeholder 		 { color: $gray; opacity: 1; transition: all 0.3s ease; }
+
+	&:focus::-webkit-input-placeholder {opacity: 0; transition: all 0.3s ease; border-color: $gray;}
+  &:focus::-moz-placeholder          {opacity: 0; transition: all 0.3s ease; border-color: $gray;}
+  &:focus:-moz-placeholder           {opacity: 0; transition: all 0.3s ease; border-color: $gray;}
+  &:focus:-ms-input-placeholder      {opacity: 0; transition: all 0.3s ease; border-color: $gray;}
+
+	&:hover,
+	&:focus,
+	&:active {
+    outline: none;
+		box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3);
+	}
+
+	// &:required:valid {
+	// 	outline: none;
+	// 	border-color: green;
+	// }
+}
+
+.errortext {
+	padding: 1rem;
+	color: red;
+	transition: all 0.3s ease;
+}
+
+.form-wrapper {
+	padding: 4rem 9rem 9rem 9rem;
+	background: url("../img/form-bg.png") center no-repeat;
+	background-size: contain;
+
+	@media (max-width: 960px) {
+		padding: 4rem 5rem 9rem 5rem;
+	}
+}
+
+.form {
+	max-width: 100%;
+	margin: 0 auto;
+	@media (max-width: $desktop) {
+		padding: 0 3%;
+	}
+}
+
+// main inputs from contacts form
+.form__unit {
+	position: relative;
+	margin-bottom: 20px;
+
+	> label {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		opacity: 0.3;
+	}
+
+	> input[type="text"],
+	> input[type="email"],
+	> input[type="tel"] {
+
+			&:focus {
+				outline: 0;
+      	background-color: #fff;
+
+				& + label {
+        	opacity: 0;
+      	}
+			}
+
+			&:valid {
+        background: #fff url("../img/check.svg");
+        background-size: 15px;
+        background-repeat: no-repeat;
+        background-position: 3px 10px;
+        	& + label {
+          	opacity: 0;
+        }
+      }
+
+			&:invalid:not(:focus):not(:placeholder-shown) {
+        background: pink;
+        & + label {
+          opacity: 0;
+        }
+      }
+
+			&:invalid:focus:not(:placeholder-shown) {
+        & ~ .form__error {
+          max-height: 20rem;
+          padding: 1rem 2rem;
+        }
+      }
+		}
+
+	> textarea {
+			height: auto;
+			&:focus {
+				outline: 0;
+      	background-color: #fff;
+
+				& + label {
+        	opacity: 0;
+      	}
+			}
+	}
+}
+
+// error text
+.form__error {
+  max-height: 0;
+  overflow: hidden;
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	padding: 0;
+	font: normal 1.4rem/1.33 $font_1;
+	color: $red;
+	border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease;
+}
+
+// submit
+.form__submit {
+  display: block;
+  width: 100%;
+	max-width: 100%;
+}
+
+//
+.form__footer {
+	text-align: center;
+	font-size: 14px;
+	color: #ddedfa;
+}

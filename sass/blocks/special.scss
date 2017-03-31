@@ -1,0 +1,75 @@
+.special {
+	background-color: $orange;
+
+	.container {
+		position: relative;
+		@include clearfix;
+	}
+}
+
+.special__column {
+	// image wrapper
+	&:first-child {
+		position: absolute;
+		top: -140px;
+		left: 30px;
+		width: 40%;
+		min-height: 370px;
+		background-color: #fff;
+		overflow: hidden;
+		@media (max-width: 960px) {
+			left: 0;
+			bottom: 0;
+			top: auto;
+		}
+		@media (max-width: $tablet) {
+			position: relative;
+			width: 115%;
+			transform: translateX(-20px);
+		}
+	}
+	// text part
+	&:last-child {
+		width: 60%;
+		float: right;
+		padding: 0 20px 0 40px;
+		@media (max-width: $tablet) {
+			width: 100%;
+			float: none;
+			text-align: center;
+		}
+	}
+	// inner
+	.title {
+		padding: 3rem 0;
+		text-align: left;
+		@media (max-width: $tablet) {
+			text-align: center;
+		}
+	}
+	p {
+		margin-bottom: 30px;
+		color: #fff;
+	}
+	img {
+		@include centerImg;
+	}
+	// media
+
+}
+
+.special__phone {
+	font-size: 24px;
+	font-weight: bold;
+	@include niceText;
+
+	a {
+		margin-left: 10px;
+		font-size: 36px;
+		color: #fff;
+		@media (max-width: 960px) {
+			display: block;
+			margin: 0;
+		}
+	}
+}

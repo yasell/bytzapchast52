@@ -77,9 +77,10 @@ a {
 		background-size: contain;
 		text-align: center;
 		text-decoration: none;
+		transition: all .3s;
 
 		&:hover {
-			background-image: url("../img/icons/top_hover.svg");
+			transform: scale(1.1);
 		}
 	}
 }

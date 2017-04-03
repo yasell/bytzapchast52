@@ -7,6 +7,7 @@
 	padding-left: 20px;
 	font: normal 1.4rem/1.33 $font_1;
 	color: $color_body;
+	border: none;
 	border-radius: 4px;
   background-color: rgb(255, 255, 255);
   box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
@@ -37,11 +38,6 @@ textarea {
     outline: none;
 		box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3);
 	}
-
-	// &:required:valid {
-	// 	outline: none;
-	// 	border-color: green;
-	// }
 }
 
 .errortext {
@@ -51,13 +47,8 @@ textarea {
 }
 
 .form-wrapper {
-	padding: 4rem 9rem 9rem 9rem;
 	background: url("../img/form-bg.png") center no-repeat;
 	background-size: contain;
-
-	@media (max-width: 960px) {
-		padding: 4rem 5rem 9rem 5rem;
-	}
 }
 
 .form {
@@ -74,10 +65,12 @@ textarea {
 	margin-bottom: 20px;
 
 	> label {
-		position: absolute;
-		top: 10px;
-		left: 10px;
-		opacity: 0.3;
+		display: none;
+		// position: absolute;
+		// top: 10px;
+		// left: 20px;
+		// font-size: 14px;
+		// opacity: 0.3;
 	}
 
 	> input[type="text"],
@@ -94,7 +87,7 @@ textarea {
 			}
 
 			&:valid {
-        background: #fff url("../img/check.svg");
+        background: #fff url("../img/icons/check.svg");
         background-size: 15px;
         background-repeat: no-repeat;
         background-position: 3px 10px;
@@ -120,13 +113,28 @@ textarea {
 
 	> textarea {
 			height: auto;
+			font-size: 14px;
+
+			&::-webkit-input-placeholder {
+				font-size: 1.6rem;
+				// opacity: 0.4;
+			}
+			&::-moz-placeholder {
+				font-size: 16px;
+				// opacity: 0.4;
+			}
+			&::-ms-placeholder {
+				font-size: 16px;
+				// opacity: 0.4;
+			}
+
 			&:focus {
 				outline: 0;
       	background-color: #fff;
 
-				& + label {
-        	opacity: 0;
-      	}
+				&::-webkit-input-placeholder {color: transparent !important;}
+				&::-moz-placeholder {color: transparent !important;}
+				&::-ms-placeholder {color: transparent !important;}
 			}
 	}
 }
@@ -137,7 +145,6 @@ textarea {
   overflow: hidden;
 	display: block;
 	width: 100%;
-	margin-top: 5px;
 	padding: 0;
 	font: normal 1.4rem/1.33 $font_1;
 	color: $red;

@@ -23,15 +23,14 @@
 	padding: 2rem;
 	font-size: 14px;
 	line-height: 20px;
+	text-decoration: none;
 	text-transform: uppercase;
 	color: #fff;
 	border-radius: 4px;
 	transition: all 0.3s;
 
-	&:active,
-	&:focus,
-	&:hover {
-		text-decoration: none;
+	&:hover,
+	&:active {
 		background-color: $blue_dark;
 	}
 }
@@ -39,13 +38,42 @@
 // header phone
 .header__phone-list {
 	text-align: right;
+
+	@media (max-width: 767px) {
+		.header__phone-item--mobile {
+			display: block;
+		}
+	}
+	@media (min-width: 768px) {
+		.header__phone-item--mobile {
+			display: none;
+		}
+	}
 }
 
 .header__phone-item {
+	display: none;
+
+	p {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 10px;
+		line-height: 1;
+		color: #fff;
+	}
+
 	a {
 		font: bold 3rem $font_1;
 		color: #fff;
 		transition: all 0.3s;
 		@include niceText;
+
+		@media (max-width: $mobile_full) {
+			font-size: 18px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		display: block;
 	}
 }

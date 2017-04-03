@@ -1,11 +1,20 @@
 .listing {
   padding-bottom: 6rem;
 	background-color: $gray_lightest;
+	@media (max-width: $mobile_full) {
+		padding-bottom: 20px;
+	}
 }
 
 .listing__promo {
 	margin-bottom: 3rem;
 	text-align: center;
+	font-size: 18px;
+
+	@media (max-width: $mobile_full) {
+		font-size: 17px;
+		padding: 0 40px;
+	}
 }
 
 .listing__list {
@@ -36,11 +45,12 @@
 	&:focus {
 		cursor: pointer;
 		border-color: $orange;
+		border-width: 2px;
 	}
 	@media (max-width: $tablet) {
 		width: 25%;
 	}
-	@media (max-width: $mobile_full) {
+	@media screen and (max-width: $mobile_full) {
 		width: 50%;
 	}
 }
@@ -48,4 +58,5 @@
 .listing__name {
 	padding: 2rem 1rem;
 	text-align: center;
+	font-weight: bold;
 }

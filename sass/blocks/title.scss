@@ -3,9 +3,14 @@
 	padding: 6rem 0 2rem 0;
 	font: bold 3.6rem $font_1;
 	text-align: center;
+	text-transform: uppercase;
 	color: $color_title;
 
 	&--white {
 		color: #fff;
+	}
+	@media (max-width: $mobile_full) {
+		padding: 25px 0 10px 0;
+		font-size: 24px;
 	}
 }

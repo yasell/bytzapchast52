@@ -1,11 +1,23 @@
 .points {
 	padding-bottom: 6rem;
+	@media (max-width: $mobile_full) {
+		padding-bottom: 0;
+	}
 }
 
 .points__promo {
 	max-width: 72rem;
 	margin: 0 auto 2rem auto;
 	text-align: center;
+	font-size: 16px;
+
+	@media (max-width: 720px) {
+		text-align: justify;
+
+		br {
+			display: none;
+		}
+	}
 }
 
 .points__list {
@@ -24,6 +36,7 @@
 	}
 	@media (max-width: $mobile_full) {
 		max-width: 100%;
+		margin-top: 70px;
 	}
 
 	// znak
@@ -40,8 +53,14 @@
 		background: url("../img/points.png") center no-repeat;
 		background-size: contain;
 
-		@media (max-width: $tablet) {
+		@media (max-width: 720px) {
 			z-index: -1;
+			top: -147px;
+			background-size: 350px;
+		}
+		@media (max-width: $mobile_full) {
+			top: -155px !important;
+			background-size: 300px !important;
 		}
 	}
 }
@@ -49,19 +68,19 @@
 .points__item {
 	position: relative;
 	width: 49%;
-	padding: 3rem 4rem;
+	padding: 3rem 10rem;
 	color: #fff;
 	transition: all 0.3s;
 
 	// left item
 	&:nth-child(odd) {
-		padding-right: 150px;
+		padding-right: 120px;
 		text-align: right;
 		.points__icon {
-			right: 5rem;
+			right: 30px;
 			background-color: $yellow;
 		}
-		@media (max-width: $tablet) {
+		@media (max-width: 720px) {
 			padding-right: 15px;
 			text-align: center;
 			border-right: 1px solid #fff;
@@ -70,12 +89,12 @@
 
 	// right item
 	&:nth-child(even) {
-		padding-left: 150px;
+		padding-left: 120px;
 		.points__icon {
-			left: 5rem;
+			left: 30px;
 		  background-color: rgb(255, 255, 255);
 		}
-		@media (max-width: $tablet) {
+		@media (max-width: 720px) {
 			padding-left: 15px;
 			border-left: 1px solid #fff;
 		}
@@ -88,12 +107,21 @@
 		background: $blue_light;
 	}
 
-	@media (max-width: $tablet) {
+	@media (max-width: 960px) {
+		padding: 3rem;
+	}
+	@media screen and (max-width: 720px) {
 		z-index: 10;
 		width: 50%;
 		padding: 100px 15px 10px 15px;
 		text-align: center;
 		border-bottom: 1px solid #fff;
+	}
+	@media screen and (max-width: $mobile_full) {
+		p {
+			font-size: 11px;
+			padding-top: 24px;
+		}
 	}
 }
 
@@ -128,9 +156,12 @@
 		background-image: url("../img/icons/point6.svg");
 	}
 
-	@media (max-width: $tablet) {
+	@media (max-width: 720px) {
 		left: 0 !important;
 		right: 0 !important;
 		margin: auto;
+	}
+	@media (max-width: $mobile_full) {
+		top: 20px;
 	}
 }

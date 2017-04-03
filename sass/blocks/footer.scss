@@ -6,8 +6,24 @@
 		justify-content: space-between;
 		align-items: center;
 	}
+	@media (max-width: $mobile_full) {
+		.logo {
+			height: 65px;
+			img {
+				width: 180px;
+				margin: 20px 0;
+			}
+		}
+	}
 }
 
 .footer__copyright {
 	color: #c5c5c5;
+	font-size: 12px;
+
+	@media (max-width: $mobile_full) {
+		text-align: center;
+
+		span {display: none;}
+	}
 }

@@ -28,49 +28,40 @@ $(".header__nav-list").on("click", "a", function(event) {
 });
 
 // call button
-$("#call").click(function() {
+$("#call, .brends__item").click(function() {
 	$("#modal_call").addClass("modal_show");
 	$(".modal_bg").css("display", "block");
 });
 
+// phone click
+$("#call2").click(function() {
+	$("#modal_call2").addClass("modal_show");
+	$(".modal_bg").css("display", "block");
+});
+
 $(".modal__close, .modal_bg").click(function() {
-	$("#modal_call").removeClass("modal_show");
+	$("#modal_call, #modal_call2").removeClass("modal_show");
 	$(".modal_bg").css("display", "none");
 });
 
-// easy form validate
-function validateForm(dir) {
-	var form = dir;
-	var name, phone;
-	var error = [];
-	// var checking;
-	form.find("#order").html("");
-	name = form.find("#name").val();
-	phone = form.find("#phone").val();
-	if (name === "") {
-		error.push("Введите имя*");
-	} else
-	if (!/[А-Яа-яЁёa-zA-Z`\s]{1,100}/.test(name)) {
-		error.push("*Мы ждём от Вас корректного имени");
-	}
-	if (phone === "") {
-		error.push("Введите телефон*");
-	} else
-	if (!/[0-9()-\s+]{3,20}/.test(phone)) {
-		error.push("*Введите корректный телефон");
-	}
-	if (error.length > 0) {
-		$.each(error, function() {
-			form.find(".errortext").append(this + "<br>");
-		});
-		return false;
-	}
-	return true;
-}
+// send mail
+$("#order, #order_modal, #order_modal2").submit(function() {
+	$.ajax({
+		type: "POST",
+		url: "mail.php",
+		data: $(this).serialize()
+	}).done(function() {
+		$(this).find("input").val("");
+		// open modal
+		$("#modal_call, #modal_call2").removeClass("modal_show");
+		$("#modal_sucsess").addClass("modal_show");
+		$(".modal_bg").css("display", "block");
 
-$(".order-btn").on("submit", function(e) {
-	var valid = validateForm($(this));
-	if (!valid) {
-		return false;
-	}
+		$(".modal__close, .modal_bg").click(function() {
+			$("#modal_sucsess").removeClass("modal_show");
+			$(".modal_bg").css("display", "none");
+		});
+		$(".form").trigger("reset");
+	});
+	return false;
 });
